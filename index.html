@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton" role="button">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <div id="reserveTable" class="modal fade" role="dialog">
+    <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <!--Modal content-->
             <div class="modal-content">
@@ -171,7 +171,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a type="button" class="btn btn-warning btn-sm btn-block p-1" data-toggle="modal" data-target="#reserveTable"><strong>Reserve Table</strong></a>
+                    <a type="button" class="btn btn-warning btn-sm btn-block p-1" role="button" id="reserveButton"><strong>Reserve Table</strong></a>
                 </div>
             </div>
         </div>
@@ -331,8 +331,13 @@
                     $('#carouselButton').children('span').removeClass('fa-play').addClass('fa-pause');
                }
            });
-           
-       })
+           $('#reserveButton').click(function(){
+	            $('#reserveModal').modal('show');
+	        });
+	       $('#loginButton').click(function(){
+		        $('#loginModal').modal('show');
+	        });
+    })
    </script>
 </body>
 
